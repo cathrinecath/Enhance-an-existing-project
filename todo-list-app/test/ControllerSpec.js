@@ -60,7 +60,7 @@ describe('controller', function () {
 
 	it('should show entries on start-up', function () {
 		// TODO: write test
-		const todo = {title : 'my list'}
+		var todo = {title : 'my list'}
 		setUpModel([todo]);
 
 		subject.setView('');
@@ -90,7 +90,7 @@ describe('controller', function () {
 
 		it('should show active entries', function () {
 			// TODO: write test
-			const todo = {tittle : 'my todo-list', completed: false};
+			var todo = {tittle : 'my todo-list', completed: false};
 			setUpModel([todo]);
 
 			subject.setView('#/active');
@@ -189,8 +189,7 @@ describe('controller', function () {
 
 			view.trigger('toggleAll', {completed: true});
 
-			//expect(view.render).toHaveBeenCalledWith('toggleAll', { checked: true });
-			expect(view.render).toHaveBeenCalledWith('elementComplete', Object({ id: 42, completed: true }));
+			expect(view.render).toHaveBeenCalledWith('elementComplete', { id: 42, completed: true });
 			
 		});
 	});
